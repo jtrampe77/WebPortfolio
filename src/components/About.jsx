@@ -8,7 +8,7 @@ const About = () => {
     const [contact, setContact] = useState(false)
     const handleClick =() => setContact(!contact)
   return (
-    <div name='about' className='w-full- h-screen bg-[#0a192f] text-gray-300'>
+    <div name='about' className='w-full md:h-screen bg-[#0a192f] text-gray-300'>
         <div className='flex flex-col justify-center items-center w-full h-full'>
             {/* Container */}
             <div className='max-w=[1000px] w-full grid grid-cols-2 gap-8'>
