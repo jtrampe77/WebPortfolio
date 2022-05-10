@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import {HiArrowNarrowRight} from 'react-icons/hi'
 import {Link} from 'react-scroll'
-
+import { motion } from 'framer-motion'
+import BackgroundAnimation from './BackgroundAnimation/BackgroundAnimation'
 
 
 const Home = () => {
@@ -11,24 +12,105 @@ const Home = () => {
 
 
   return (
-    <div name='home' className='w-full h-screen bg-[#0a192f]'>
+    <div name='home' className='w-full h-screen bg-[#0a192f] md:flex justify-center items-center'>
       
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
-        <p className='text-pink-600'>Welcome! I`m,</p>
-        <h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>John Trampe</h1>
-        <h2 className='text-3xl  sm:text-6xl font-bold text-[#8892b0]'>I`m a Junior Web Developer</h2>
-        <p className='text-[#8892b0] py-4 max-w-[700px]'>I`m` a Web Developer that is willing to showcase the skills I have learned. Designing and developing websites is a passion of mine. I have experience in using HTML, CSS, JS, PHP, React, Next, SQL, and many more that is essential for building websites.</p>
+      <div className='max-w-[1000px] mx-auto px-4 flex flex-col justify-center h-full'>
+        <motion.p className='text-pink-600'
+          initial={{
+            opacity: 0,
+            y:-50
+          }}
+          animate={{
+              opacity:1,
+              y:0
+          }}
+          transition={{
+              duration:1
+          }}
+        >
+          Welcome! I`m,
+        </motion.p>
 
-        <div>
-          <Link className='group text-white border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600 sm:w-[30%] lg:w-[20%]' onClick={handleClick} to="work" smooth={true} duration={500}>View Projects
+        <motion.h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'
+          initial={{
+            opacity: 0,
+            x:-250
+          }}
+          animate={{
+              opacity:1,
+              x:0
+          }}
+          transition={{
+              duration:2,
+              type:"spring"
+          }}
+        >
+          John Trampe
+        </motion.h1>
+
+        <motion.h2 className='text-3xl  sm:text-6xl font-bold text-[#8892b0]'
+          initial={{
+            opacity: 0,
+            x:250
+          }}
+          animate={{
+              opacity:1,
+              x:0
+          }}
+          transition={{
+              duration:2,
+              type:"spring"
+          }}
+        >
+          I`m a Junior Web Developer
+        </motion.h2>
+
+        <motion.p className='text-[#8892b0] py-4 max-w-[700px]'
+          initial={{
+            opacity: 0
+          }}
+          animate={{
+              opacity:1
+          }}
+          transition={{
+              duration:3
+          }}
+        
+        >
+          I`m` a Web Developer that is willing to showcase the skills I have learned. Designing and developing websites is a passion of mine. I have experience in using HTML, CSS, JS, PHP, React, Next, SQL, and many more that is essential for building websites.
+        </motion.p>
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y:50
+          }}
+          animate={{
+              opacity:1,
+              y:0
+          }}
+          transition={{
+              duration:3,
+              type:"spring",
+              stiffness:50,
+              delay:1
+          }}
+        
+        >
+          <Link className='group text-white border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600 sm:w-[30%] lg:w-[25%]' onClick={handleClick} to="work" smooth={true} duration={500}>View Projects
 
           <span className=' group-hover:rotate-90 duration-300'>
             <HiArrowNarrowRight className='ml-3' />
           </span>
           </Link>
        
-        </div>
+        </motion.div>
+
+      </div>
+
+      <div className='w-[650px] hidden md:block'>
+      <BackgroundAnimation />
       </div>
 
     </div>
