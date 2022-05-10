@@ -35,7 +35,8 @@ const About = () => {
         }
 
         console.log('use effect hook, inView =', inView)
-    }, [inView])
+        
+    }, [inView,animation])
 
 
 
