@@ -26,7 +26,8 @@ const Skills = () => {
                 x:0,
                 transition:{
                     type:"spring",
-                    duration:3
+                    duration:3,
+                    bounce:0.3
                 }
             })
         }
